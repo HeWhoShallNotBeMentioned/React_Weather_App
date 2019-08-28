@@ -1,5 +1,6 @@
 body, html {
   height: 100%;
+  /* margin-bottom: 750px; */
 }
 
 li {
@@ -9,10 +10,11 @@ li {
 .App {
   text-align: center;
 /* The image used */
-background-image: url("https://i1.wp.com/www.palawan-divers.org/wp-content/uploads/2017/06/weather-in-el-nido-1.jpg?resize=1068%2C801&ssl=1");
+background-image: url("./Wilm_Background.jpg");
 
 /* Full height */
 height: 100%; 
+
 
 /* Center and scale the image nicely */
 background-position: center;
@@ -53,7 +55,7 @@ background-size: cover;
   padding: 30px;
   border-radius: 20px;
   display: inline-block;
-  margin-bottom: 750px;
+  margin-bottom: 1050px;
   font-size: 22px;
   font-family: 'Quicksand', sans-serif;
   border: 2px solid slateblue;

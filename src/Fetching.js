@@ -12,47 +12,66 @@ class Fetching extends Component {
     pressure: null,
     humidity: null,
     weather: [],
-    lat: null,
-    lon: null,
+   
   }
 
   }
 
-  async componentDidMount(){
-    try {                            
-    const {data, }  = await axios.get(process.env.REACT_APP_API_URL + 'lat=34.2104&lon=-77.915543&APPID=' + process.env.REACT_APP_API_KEY);
-    console.log("api_results...", data)
-    console.log("api_results_weather...", data.weather)
-      const nameVar = data.name
-      const tempVar = data.main.temp_max
-      const pressureVar = data.main.pressure
-      const humidityVar = data.main.humidity
-      const weatherVar = data.weather
-      const latVar = +data.coord['lat']
-      const lonVar = +data.coord['lon']
+   async componentDidMount(){
+    console.log("Fetching props++++++   ", this.state.props)
+
+    try {   
+     
+      let nameVar = null
+      let tempVar = null
+      let pressureVar = null
+      let humidityVar = null
+      let weatherVar = null
+    
+      
+//     if (this.state.props && this.state.props.lat && this.state.props.lon) {
+
+  const { data }  = await axios.get(process.env.REACT_APP_API_URL + 'lat=' + this.props.lat + '&lon=' + this.props.lon + '&APPID=' + process.env.REACT_APP_API_KEY);
+
+console.log("api_results...", data)
+//     //console.log("api_results_weather...", data.weather)
+       nameVar = data.name
+       tempVar = data.main.temp
+       pressureVar = data.main.pressure
+       humidityVar = data.main.humidity
+       weatherVar = data.weather
  
       this.setState({name: nameVar, 
         temp: tempVar, 
         humidity: humidityVar, 
         pressure: pressureVar, 
         weather: weatherVar,
-        lat: latVar,
-        lon: lonVar,
+       
       })
 
-    } catch (error) {
+    }
+      
+
+    catch (error) {
       console.log(error)
     }
   }
 
+  
+
+ 
 
   render(){
+   
     return(<div >
+           {this.state.weather[0] ? <div>
       <h1 className="mainHeader">Weather App</h1>
+  
       <Display 
       state={this.state}
       weather={this.state.weather[0]}
-      />
+      /> </div >: <div style={{color: 'black', fontSize: '80px', marginBottom: '750px', textAlign: 'center'}}>Loading Local Weather Data...'</div> }
+
    </div>)
   }
 }

@@ -1,11 +1,11 @@
 import React from 'react';
-import Fetching from './Fetching';
+import GeoLocation from './GeoLocation';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     <Fetching/>
+     <GeoLocation/>
     </div>
   );
 }
