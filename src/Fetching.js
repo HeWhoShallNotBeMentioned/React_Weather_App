@@ -28,8 +28,8 @@ class Fetching extends Component {
       const pressureVar = data.main.pressure
       const humidityVar = data.main.humidity
       const weatherVar = data.weather
-      const latVar = data.coord['lat']
-      const lonVar = data.coord['lon']
+      const latVar = +data.coord['lat']
+      const lonVar = +data.coord['lon']
  
       this.setState({name: nameVar, 
         temp: tempVar, 

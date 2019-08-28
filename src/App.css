@@ -27,7 +27,7 @@ background-size: cover;
   text-decoration: underline;
 }
 
-.weatherBox {
+.weatherBoxWilm {
   width: 50%;
   background-color: #008080;
   color: 	white;
@@ -38,9 +38,28 @@ background-size: cover;
   margin-bottom: 750px;
   font-size: 22px;
   font-family: 'Quicksand', sans-serif;
-
+  border: 2px solid white;
 }
-.weatherBox li {
+
+.weatherBoxWilm  li {
+  margin: 20px 0;
+}
+
+.weatherBoxOther {
+  width: 50%;
+  background-color: navy;
+  color: 	white;
+  margin: 30px;
+  padding: 30px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 750px;
+  font-size: 22px;
+  font-family: 'Quicksand', sans-serif;
+  border: 2px solid slateblue;
+}
+  
+.weatherBoxOther li {
   margin: 20px 0;
 }
 

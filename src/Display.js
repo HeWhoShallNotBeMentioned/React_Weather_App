@@ -6,6 +6,8 @@ const display = (props) => {
   let desc = ''
   let lon = 0;
   let lat = 0;
+  let mainClass = 'weatherBoxOther';
+
   if (props.weather) {
    desc = props.weather['main'];
   }
@@ -17,8 +19,12 @@ const display = (props) => {
     lat = props.state.lat
   }
 
+if ( lat < 36 && lat > 34 && lon > -79 && lon < -77 ) {
+  mainClass='weatherBoxWilm'
+}
 
-return (<div className={'weatherBox'}>
+
+return (<div className={mainClass}>
   <h3>The current weather in {props.state.name} is:</h3>
   <ul>
     <li><strong>Tempurature:</strong> {farenTemp} Farenheit</li>
