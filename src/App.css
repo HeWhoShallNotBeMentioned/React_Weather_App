@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   height: 100%;
   /* margin-bottom: 750px; */
 }
@@ -9,17 +10,16 @@ li {
 
 .App {
   text-align: center;
-/* The image used */
-background-image: url("./Wilm_Background.jpg");
+  /* The image used */
+  background-image: url('./Wilm_Background.jpg');
 
-/* Full height */
-height: 100%; 
+  /* Full height */
+  height: 100%;
 
-
-/* Center and scale the image nicely */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mainHeader {
@@ -32,25 +32,25 @@ background-size: cover;
 .weatherBoxWilm {
   width: 50%;
   background-color: #008080;
-  color: 	white;
+  color: white;
   margin: 30px;
   padding: 30px;
   border-radius: 20px;
   display: inline-block;
-  margin-bottom: 750px;
+  margin-bottom: 1050px;
   font-size: 22px;
   font-family: 'Quicksand', sans-serif;
   border: 2px solid white;
 }
 
-.weatherBoxWilm  li {
+.weatherBoxWilm li {
   margin: 20px 0;
 }
 
 .weatherBoxOther {
   width: 50%;
   background-color: navy;
-  color: 	white;
+  color: white;
   margin: 30px;
   padding: 30px;
   border-radius: 20px;
@@ -60,7 +60,7 @@ background-size: cover;
   font-family: 'Quicksand', sans-serif;
   border: 2px solid slateblue;
 }
-  
+
 .weatherBoxOther li {
   margin: 20px 0;
 }
@@ -69,4 +69,3 @@ h1 {
   margin-top: 0;
   padding-top: 40px;
 }
-

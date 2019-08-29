@@ -16,10 +16,13 @@ class GeoLocation extends Component {
         <Fetching lat={this.props.coords.latitude} lon={this.props.coords.longitude} />
 
     ) : (
-        <div style={{marginBottom: '750px', backgroundImage: `url(${"./Wilm_Background.jpg"})`, color: 'black', fontSize: '80px', }}>Finding Location...</div>
-    );
-}
-
+        <div style={{
+            marginBottom: '750px', 
+            backgroundImage: `url(${"./Wilm_Background.jpg"})`, 
+            color: 'black', 
+            fontSize: '80px', }}>Finding Location...</div>
+        );
+    }
 }
 
 export default geolocated({

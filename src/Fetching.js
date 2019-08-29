@@ -12,29 +12,23 @@ class Fetching extends Component {
     pressure: null,
     humidity: null,
     weather: [],
-   
-  }
-
-  }
+     }
+   }
 
    async componentDidMount(){
     console.log("Fetching props++++++   ", this.state.props)
 
-    try {   
-     
+  try {   
       let nameVar = null
       let tempVar = null
       let pressureVar = null
       let humidityVar = null
       let weatherVar = null
     
-      
-//     if (this.state.props && this.state.props.lat && this.state.props.lon) {
+      const { data }  = await axios.get(process.env.REACT_APP_API_URL + 'lat=' + this.props.lat + '&lon=' + this.props.lon + '&APPID=' + process.env.REACT_APP_API_KEY);
 
-  const { data }  = await axios.get(process.env.REACT_APP_API_URL + 'lat=' + this.props.lat + '&lon=' + this.props.lon + '&APPID=' + process.env.REACT_APP_API_KEY);
+      console.log("api_results...", data)
 
-console.log("api_results...", data)
-//     //console.log("api_results_weather...", data.weather)
        nameVar = data.name
        tempVar = data.main.temp
        pressureVar = data.main.pressure
@@ -45,34 +39,33 @@ console.log("api_results...", data)
         temp: tempVar, 
         humidity: humidityVar, 
         pressure: pressureVar, 
-        weather: weatherVar,
-       
+        weather: weatherVar, 
       })
-
     }
-      
-
     catch (error) {
       console.log(error)
     }
   }
-
-  
-
- 
-
   render(){
-   
-    return(<div >
-           {this.state.weather[0] ? <div>
-      <h1 className="mainHeader">Weather App</h1>
-  
-      <Display 
-      state={this.state}
-      weather={this.state.weather[0]}
-      /> </div >: <div style={{color: 'black', fontSize: '80px', marginBottom: '750px', textAlign: 'center'}}>Loading Local Weather Data...'</div> }
+    return(
+    <div >
+      {
+        this.state.weather[0] ? 
+        <div>
+          <h1 className="mainHeader">Weather App</h1>
+          <Display 
+          state={this.state}
+          weather={this.state.weather[0]}
+          /> 
+        </div> : 
+        <div style={{
+          color: 'black', 
+          fontSize: '80px', 
+          marginBottom: '750px', 
+          textAlign: 'center'}}>Loading Local Weather Data...'</div> }
 
-   </div>)
+   </div>
+   )
   }
 }
 export default Fetching;
