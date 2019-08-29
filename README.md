@@ -14,13 +14,13 @@ GeoLocation.js -> Fetching.js -> Display.js
 
 ## Setup/Installation Requirements
 
-- _This is a great place_
-- _to list setup instructions_
-- _in a simple_
-- _easy-to-understand_
-- _format_
+- _Copy the repo from Gitub_
+- _Go to into the project folder where you wanted it saved _
+- _run npm install_
+- _when this is done, run npm start_
+- _open your internet broswer to localhost:3000_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+_{}_
 
 ## Known Bugs
 
@@ -32,7 +32,7 @@ _{cunderwoodmn [at] gmail {dot} com}_
 
 ## Technologies Used
 
-_{React, OpenWeatherAPI, HTML5_Geolocation, CSS3, JavaScript, axios, react_geolocated }_
+_{React, OpenWeatherAPI, HTML5_Geolocation, CSS3, JavaScript, axios, react_geolocated, create-react-app, heroku }_
 
 ### License
 
