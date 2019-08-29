@@ -14,8 +14,9 @@ class Fetching extends Component {
     humidity: null,
     weather: [], 
     visibility: false,
-     sunrise: null,
+    sunrise: null,
     sunset: null,
+    icon: null,
      }
    }
 

@@ -9,11 +9,15 @@ const display = (props) => {
   let lat = 0;
   let mainClass = 'weatherBoxOther';
   let displayTemp = '';
+  let icon = props.weather['icon']
+  let iconURL = 'http://openweathermap.org/img/wn/' + icon + '.png';
+  console.log("iconURL", iconURL)
   let sunrise2 = null;
   sunrise2 = new Date( props.state.sunrise *1000);
   let sunriseHours = sunrise2.getHours();
   let sunriseMinutes = (sunrise2.getMinutes()<10?'0':'') + sunrise2.getMinutes();;
   let sunriseFormat = <span>{sunriseHours}:{sunriseMinutes} UT</span>
+  
 
   let sunset2 = null;
   sunset2 = new Date( props.state.sunset *1000);
@@ -21,9 +25,7 @@ const display = (props) => {
   let sunsetMinutes = (sunset2.getMinutes()<10?'0':'') + sunset2.getMinutes();
   let sunsetFormat = <span>{sunsetHours}:{sunsetMinutes} UT</span>
   // sunset = new Date( props.state.sunset *1000);
-console.log(sunrise2)
-console.log(sunriseHours)
-console.log(sunriseMinutes)
+
 
 
   if (props.weather) {
@@ -54,7 +56,8 @@ return (<div className={mainClass}>
     <li onClick={props.visClickHandler}><strong>Temperature:</strong> {displayTemp} </li>
     <li><strong>Atmospheric Pressure:</strong> {props.state.pressure}</li>
     <li><strong>Humidity:</strong> {props.state.humidity}%</li>
-    <li><strong>Sky:</strong> {desc}</li>
+    <li> <img alt={"weather icon" } src={iconURL} /></li>
+    <li><strong>Sky:</strong> {desc} </li>
     <li><strong>Sunrise:</strong> {sunriseFormat}</li>
     <li><strong>Sunset:</strong> {sunsetFormat}</li>
   </ul>
