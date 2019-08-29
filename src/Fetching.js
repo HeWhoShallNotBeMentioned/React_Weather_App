@@ -14,6 +14,8 @@ class Fetching extends Component {
     humidity: null,
     weather: [], 
     visibility: false,
+     sunrise: null,
+    sunset: null,
      }
    }
 
@@ -26,6 +28,8 @@ class Fetching extends Component {
       let pressureVar = null
       let humidityVar = null
       let weatherVar = null
+      let sunriseVar = null
+      let sunsetVar = null
     
       const { data }  = await axios.get(process.env.REACT_APP_API_URL + 'lat=' + this.props.lat + '&lon=' + this.props.lon + '&APPID=' + process.env.REACT_APP_API_KEY);
 
@@ -36,12 +40,16 @@ class Fetching extends Component {
        pressureVar = data.main.pressure
        humidityVar = data.main.humidity
        weatherVar = data.weather
- 
+       sunriseVar = data.sys.sunrise
+       sunsetVar = data.sys.sunset
+
       this.setState({name: nameVar, 
         temp: tempVar, 
         humidity: humidityVar, 
         pressure: pressureVar, 
         weather: weatherVar, 
+        sunrise: sunriseVar,
+        sunset: sunsetVar,
       })
     }
     catch (error) {

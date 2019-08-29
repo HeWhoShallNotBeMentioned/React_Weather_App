@@ -9,6 +9,22 @@ const display = (props) => {
   let lat = 0;
   let mainClass = 'weatherBoxOther';
   let displayTemp = '';
+  let sunrise2 = null;
+  sunrise2 = new Date( props.state.sunrise *1000);
+  let sunriseHours = sunrise2.getHours();
+  let sunriseMinutes = (sunrise2.getMinutes()<10?'0':'') + sunrise2.getMinutes();;
+  let sunriseFormat = <span>{sunriseHours}:{sunriseMinutes} UT</span>
+
+  let sunset2 = null;
+  sunset2 = new Date( props.state.sunset *1000);
+  let sunsetHours = sunset2.getHours();
+  let sunsetMinutes = (sunset2.getMinutes()<10?'0':'') + sunset2.getMinutes();
+  let sunsetFormat = <span>{sunsetHours}:{sunsetMinutes} UT</span>
+  // sunset = new Date( props.state.sunset *1000);
+console.log(sunrise2)
+console.log(sunriseHours)
+console.log(sunriseMinutes)
+
 
   if (props.weather) {
    desc = props.weather['main'];
@@ -35,11 +51,12 @@ if ( lat < 36 && lat > 34 && lon > -79 && lon < -77 ) {
 return (<div className={mainClass}>
   <h3>The current weather in {props.state.name} is:</h3>
   <ul>
-    <li onClick={props.visClickHandler}><strong>Tempurature:</strong> {displayTemp} </li>
+    <li onClick={props.visClickHandler}><strong>Temperature:</strong> {displayTemp} </li>
     <li><strong>Atmospheric Pressure:</strong> {props.state.pressure}</li>
     <li><strong>Humidity:</strong> {props.state.humidity}%</li>
     <li><strong>Sky:</strong> {desc}</li>
-    
+    <li><strong>Sunrise:</strong> {sunriseFormat}</li>
+    <li><strong>Sunset:</strong> {sunsetFormat}</li>
   </ul>
 </div>)
 }
