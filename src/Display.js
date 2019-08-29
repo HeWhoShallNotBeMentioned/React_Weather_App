@@ -53,7 +53,7 @@ if (windDegree >= 337.5 && windDegree <= 360 && windDegree >= 0 && windDegree <=
 
 
   if (props.weather) {
-   desc = props.weather['main'];
+   desc = props.weather['description'];
   }
 
   if (props.state.lon){
@@ -83,7 +83,7 @@ return (<div className={mainClass}>
     <li><strong>Atmospheric Pressure:</strong> {props.state.pressure}</li>
     <li><strong>Humidity:</strong> {props.state.humidity}%</li>
     <li> <img alt={"weather icon" } src={iconURL} /></li>
-    <li><strong>Sky:</strong> {desc} </li>
+    <li><strong>Sky:</strong> <span style={{textTransform: 'capitalize'}}>{desc}</span> </li>
     <li onClick={props.visClickHandler}><strong>Wind:</strong> {displayWind}</li>
     <li><strong>Sunrise:</strong> {sunriseFormat}</li>
     <li><strong>Sunset:</strong> {sunsetFormat}</li>
