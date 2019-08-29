@@ -34,19 +34,19 @@ const display = (props) => {
 if (windDegree >= 337.5 && windDegree <= 360 && windDegree >= 0 && windDegree <= 22.5) {
   windDirText = 'North';
 } else if (windDegree > 22.5 && windDegree <= 67.5) {
-  windDirText = "NE"
+  windDirText = "North East"
 } else if (windDegree > 67.5 && windDegree <= 112.5 ) {
   windDirText = "East"
 } else if (windDegree > 112.5 && windDegree <= 157.5 ) {
-  windDirText = "SE"
+  windDirText = "South East"
 } else if (windDegree > 157.5 && windDegree <= 202.5 ) {
   windDirText = "South"
 } else if (windDegree > 202.5 && windDegree <= 247.5 ) {
-  windDirText = "SW"
+  windDirText = "South West"
 } else if (windDegree > 247.5 && windDegree <= 292.5 ) {
   windDirText = "West"
 } else if (windDegree > 292.5 && windDegree <= 337.5 ) {
-  windDirText = "NW"
+  windDirText = "North West"
 } else {
   windDirText = 'Not Found';
 }
@@ -68,7 +68,7 @@ if (windDegree >= 337.5 && windDegree <= 360 && windDegree >= 0 && windDegree <=
     displayWind = <span style={{textDecoration: 'underline'}}>{windMeters} Meters/Sec {windDirText}</span>
   } else {
     displayTemp = <span style={{textDecoration: 'underline'}}>{farenTemp} Farenheit</span>
-    displayWind = <span style={{textDecoration: 'underline'}}>{windMiles} Miles/hour {windDirText}</span>
+    displayWind = <span style={{textDecoration: 'underline'}}>{windMiles} Miles/Hour {windDirText}</span>
   }
 
 if ( lat < 36 && lat > 34 && lon > -79 && lon < -77 ) {
