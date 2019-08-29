@@ -6,7 +6,7 @@
 
 ## Description
 
-\_{The app uses the HTML5 Geolocation to obtain latitude and longitude data that is then send to the OpenWeatherAPI for the weather info. The react_geolocated npm package is used to for gathering the HTML Geolocation data. Axios is used for retreieving data from the OpenWeatherAPI. State and props are used to gather and share the data between the three components. User can switch between celsius and farenheit by clicking on the underlined temperature.
+\_{The app uses the HTML5 Geolocation to obtain latitude and longitude data that is then send to the OpenWeatherAPI for the weather info. The react_geolocated npm package is used to for gathering the HTML Geolocation data. Axios is used for retreieving data from the OpenWeatherAPI. State and props are used to gather and share the data between the three components. User can switch between celsius and farenheit by clicking on the underlined temperature as well.
 
 GeoLocation.js -> Fetching.js -> Display.js
 
