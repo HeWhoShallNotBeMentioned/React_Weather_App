@@ -16,7 +16,9 @@ class Fetching extends Component {
     visibility: false,
     sunrise: null,
     sunset: null,
-    icon: null,
+    windSpeed: null,
+    windDir: null,
+
      }
    }
 
@@ -31,6 +33,8 @@ class Fetching extends Component {
       let weatherVar = null
       let sunriseVar = null
       let sunsetVar = null
+      let windSpeedVar = null
+      let windDirVar = null
     
       const { data }  = await axios.get(process.env.REACT_APP_API_URL + 'lat=' + this.props.lat + '&lon=' + this.props.lon + '&APPID=' + process.env.REACT_APP_API_KEY);
 
@@ -43,6 +47,8 @@ class Fetching extends Component {
        weatherVar = data.weather
        sunriseVar = data.sys.sunrise
        sunsetVar = data.sys.sunset
+       windSpeedVar = data.wind.speed
+       windDirVar = data.wind.deg
 
       this.setState({name: nameVar, 
         temp: tempVar, 
@@ -51,6 +57,8 @@ class Fetching extends Component {
         weather: weatherVar, 
         sunrise: sunriseVar,
         sunset: sunsetVar,
+        windSpeed: windSpeedVar,
+        windDir: windDirVar,
       })
     }
     catch (error) {
