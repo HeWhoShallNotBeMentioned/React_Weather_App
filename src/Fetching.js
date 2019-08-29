@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import axios from 'axios';
 import Display from './Display';
+
 require('dotenv').config();
 
 class Fetching extends Component {
@@ -11,7 +12,8 @@ class Fetching extends Component {
     name: '', temp: null,
     pressure: null,
     humidity: null,
-    weather: [],
+    weather: [], 
+    visibility: false,
      }
    }
 
@@ -46,6 +48,12 @@ class Fetching extends Component {
       console.log(error)
     }
   }
+
+  visibilityClickHandler = () => {
+    const newVis = !this.state.visibility
+    this.setState({ visibility: newVis})
+  }
+
   render(){
     return(
     <div >
@@ -56,6 +64,7 @@ class Fetching extends Component {
           <Display 
           state={this.state}
           weather={this.state.weather[0]}
+          visClickHandler={this.visibilityClickHandler}
           /> 
         </div> : 
         <div style={{
