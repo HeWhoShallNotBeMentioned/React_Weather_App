@@ -62,7 +62,7 @@ class Fetching extends Component {
           color: 'black', 
           fontSize: '80px', 
           marginBottom: '750px', 
-          textAlign: 'center'}}>Loading Local Weather Data...'</div> }
+          textAlign: 'center'}}>Loading Local Weather Data...</div> }
 
    </div>
    )
