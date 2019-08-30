@@ -12,8 +12,8 @@ const display = (props) => {
   let displayWind = '';
   let icon = props.weather['icon']
   let iconURL = 'http://openweathermap.org/img/wn/' + icon + '.png';
-  let windMeters = props.state.windSpeed;
-  let windMiles = windMeters * 2.237 
+  let windMeters = props.state.windSpeed.toFixed(2);
+  let windMiles = (windMeters * 2.237).toFixed(2)
   let windDegree = props.state.windDir;
   let windDirText = '';
 
