@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Display from './Display';
 
+
 require('dotenv').config();
 
 class Fetching extends Component {
@@ -85,10 +86,15 @@ class Fetching extends Component {
           /> 
         </div> : 
         <div style={{
-          color: 'black', 
-          fontSize: '80px', 
-          marginBottom: '750px', 
-          textAlign: 'center'}}>Loading Local Weather Data...</div> }
+          margin: 'auto',
+            textAlign: 'center',
+            marginTop: "250px",
+            marginBottom: '750px', 
+            color: 'black', 
+            fontSize: '80px',
+            backgroundColor: '#3CB371',
+            borderRadius: '15px',
+          }}>Loading Local Weather Data...</div> }
 
    </div>
    )

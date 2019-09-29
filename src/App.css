@@ -1,7 +1,9 @@
 body,
 html {
-  height: 100%;
-  /* margin-bottom: 750px; */
+  background-image: url('./Wilm_Background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 li {
@@ -11,7 +13,7 @@ li {
 .App {
   text-align: center;
   /* The image used */
-  background-image: url('./Wilm_Background.jpg');
+  /* background-image: url('./Wilm_Background.jpg'); */
 
   /* Full height */
   height: 100%;
