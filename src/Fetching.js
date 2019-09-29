@@ -9,17 +9,19 @@ require('dotenv').config();
 class Fetching extends Component {
   constructor(props) {
     super(props)
-    this.state={lat: null, lon: null,
-    name: '', temp: null,
-    pressure: null,
-    humidity: null,
-    weather: [], 
-    visibility: false,
-    sunrise: null,
-    sunset: null,
-    windSpeed: null,
-    windDir: null,
-
+    this.state={
+      lat: null, 
+      lon: null,
+      name: '', 
+      temp: null,
+      pressure: null,
+      humidity: null,
+      weather: [], 
+      visibility: false,
+      sunrise: null,
+      sunset: null,
+      windSpeed: null,
+      windDir: null,
      }
    }
 
@@ -36,7 +38,7 @@ class Fetching extends Component {
       let sunsetVar = null
       let windSpeedVar = null
       let windDirVar = null
-    
+    // lat 42.3733 this.props.lat lon -71.2367 this.props.lon
       const { data }  = await axios.get(process.env.REACT_APP_API_URL + 'lat=' + this.props.lat + '&lon=' + this.props.lon + '&APPID=' + process.env.REACT_APP_API_KEY);
 
       console.log("api_results...", data)
@@ -52,6 +54,8 @@ class Fetching extends Component {
        windDirVar = data.wind.deg
 
       this.setState({name: nameVar, 
+        lat: this.props.lat,
+        lon: this.props.lat,
         temp: tempVar, 
         humidity: humidityVar, 
         pressure: pressureVar, 

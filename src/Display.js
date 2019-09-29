@@ -59,10 +59,10 @@ if (windDegree >= 337.5 && windDegree <= 360 && windDegree >= 0 && windDegree <=
   }
 
   if (props.state.lon){
-    lon = props.state.lon
+    lon = Number(props.state.lon)
   }
   if (props.state.lat){
-    lat = props.state.lat
+    lat = Number(props.state.lat)
   }
 
   if (props.state.visibility) {
@@ -73,8 +73,11 @@ if (windDegree >= 337.5 && windDegree <= 360 && windDegree >= 0 && windDegree <=
     displayWind = <span style={{textDecoration: 'underline'}}>{windMiles} Miles/Hour {windDirText}</span>
   }
 
-if ( lat < 36 && lat > 34 && lon > -79 && lon < -77 ) {
+if ( lat <= 36 && lat >= 34 && lon >= -79 && lon  <= -77 ) {
   mainClass='weatherBoxWilm'
+} else if ( lat <= 44 && lat >= 40 && lon >= -73 && lon <= -70 ) {
+  mainClass='weatherBoxBrandeis'
+  // lat 42.3733  lon -71.2367
 }
 
 
