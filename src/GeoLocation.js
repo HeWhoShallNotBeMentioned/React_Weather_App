@@ -12,11 +12,12 @@ class GeoLocation extends Component {
             margin: 'auto',
               textAlign: 'center',
               marginTop: "250px",
-              marginBottom: '750px', 
+              marginBottom: '1050px', 
               color: 'black', 
               fontSize: '80px',
+              padding: '30px',
               backgroundColor: '#3CB371',
-              borderRadius: '15px',
+
             }}
             >Your browser does not support Geolocation</div>
     ) : !this.props.isGeolocationEnabled ? (
@@ -24,11 +25,12 @@ class GeoLocation extends Component {
             margin: 'auto',
               textAlign: 'center',
               marginTop: "250px",
-              marginBottom: '750px', 
-              color: 'black', 
+              marginBottom: '1050px', 
+              color: 'black',
+              padding: '30px',
               fontSize: '80px',
               backgroundColor: '#3CB371',
-              borderRadius: '15px',
+
             }}>Geolocation is not enabled</div>
     ) : this.props.coords ? (
        
@@ -40,11 +42,10 @@ class GeoLocation extends Component {
             margin: 'auto',
             textAlign: 'center',
             marginTop: "250px",
-            marginBottom: '750px', 
+            marginBottom: '1050px', 
             color: 'black', 
             padding: '30px',
             backgroundColor: '#3CB371',
-            borderRadius: '15px',
             fontSize: '80px', }}>Finding Location...</div>
         );
     }

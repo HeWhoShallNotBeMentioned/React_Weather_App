@@ -92,8 +92,8 @@ class Fetching extends Component {
             marginBottom: '750px', 
             color: 'black', 
             fontSize: '80px',
+            padding: '30px',
             backgroundColor: '#3CB371',
-            borderRadius: '15px',
           }}>Loading Local Weather Data...</div> }
 
    </div>
