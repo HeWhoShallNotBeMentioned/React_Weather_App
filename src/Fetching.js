@@ -55,7 +55,7 @@ class Fetching extends Component {
 
       this.setState({name: nameVar, 
         lat: this.props.lat,
-        lon: this.props.lat,
+        lon: this.props.lon,
         temp: tempVar, 
         humidity: humidityVar, 
         pressure: pressureVar, 
